@@ -11,23 +11,23 @@ int Date::getNam()
 {
 	return this->_iNam;
 }
-void Date::setNgay(int _iNgay)
+void Date::setNgay(int iNgay)
 {
-	this->_iNgay = _iNgay;
+	this->_iNgay = iNgay;
 }
-void Date::setThang(int _iThang)
+void Date::setThang(int iThang)
 {
-	this->_iThang = _iThang;
+	this->_iThang = iThang;
 }
-void Date::setNam(int _iNam)
+void Date::setNam(int iNam)
 {
-	this->_iNam = _iNam;
+	this->_iNam = iNam;
 }
-void Date::setDate(int _iNgay, int _iThang, int _iNam)
+void Date::setDate(int iNgay, int iThang, int iNam)
 {
-	this->_iNgay = _iNgay;
-	this->_iThang = _iThang;
-	this->_iNam = _iNam;
+	this->_iNgay = iNgay;
+	this->_iThang = iThang;
+	this->_iNam = iNam;
 }
 void Date::outputNgay()
 {

@@ -39,19 +39,19 @@ public:
 		this->_iThang = (info->tm_mon + 1);
 		this->_iNam = (info->tm_year + 1900);
 	}
-	Date(int _iNgay, int _iThang, int _iNam)
+	Date(int iNgay, int iThang, int iNam)
 	{
-		this->_iNgay = _iNgay;
-		this->_iThang = _iThang;
-		this->_iNam = _iNam;
+		this->_iNgay = iNgay;
+		this->_iThang = iThang;
+		this->_iNam = iNam;
 	}
 	int getNgay();
 	int getThang();
 	int getNam();
-	void setNgay(int _iNgay);
-	void setThang(int _iThang);
-	void setNam(int _iNam);
-	void setDate(int _iNgay, int _iThang, int _iNam);
+	void setNgay(int iNgay);
+	void setThang(int iThang);
+	void setNam(int iNam);
+	void setDate(int iNgay, int iThang, int iNam);
 	void outputNgay();
 	friend istream& operator >> (istream& is, Date& d);
 	friend ostream& operator << (ostream& os, Date& d);
