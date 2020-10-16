@@ -1,0 +1,9 @@
+ * Library Management System Project in C++
+ *
+ * Copyright (c) 2020, Thang Tran and contributors.
+ * All rights reserved.
+ *
+ * @package Library Management System
+ * @version 1.0
+ * @copyright 2020 Thang Tran <4501104220@student.hcmue.edu.vn>
+ * @author Thang Tran
