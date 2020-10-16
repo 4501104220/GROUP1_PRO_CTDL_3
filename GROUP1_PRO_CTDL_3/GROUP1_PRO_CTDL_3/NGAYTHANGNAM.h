@@ -15,7 +15,7 @@
 using namespace std;
 #pragma once
 class Sach;
-class Bandoc;
+class BanDoc;
 class SinhVien;
 class GiaoVien;
 class Date
@@ -24,7 +24,7 @@ private:
 	int _iNgay, _iThang, _iNam;
 public:
 	friend Sach;
-	friend Bandoc;
+	friend BanDoc;
 	friend GiaoVien;
 	friend SinhVien;
 

@@ -28,9 +28,9 @@ void Admin::docAd(ifstream& fcin)
 	rewind(stdin);
 	getline(fcin, _strMatKhau);
 }
-ostream& operator << (ostream& os, Admin& ad)
+ostream& operator << (ostream& os, Admin& Ad)
 {
-	os << "Tai Khoan: " << ad._strTaiKhoan << endl;
-	os << "Mat Khau: " << ad._strMatKhau << endl;
+	os << "Tai Khoan: " << Ad._strTaiKhoan << endl;
+	os << "Mat Khau: " << Ad._strMatKhau << endl;
 	return os;
 }

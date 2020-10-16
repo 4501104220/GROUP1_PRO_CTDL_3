@@ -1,4 +1,5 @@
 #include "NGAYTHANGNAM.h"
+
 int Date::getNgay()
 {
 	return this->_iNgay;
@@ -33,18 +34,18 @@ void Date::outputNgay()
 {
 	cout << this->_iNgay << "/" << this->_iThang << "/" << this->_iNam << endl;
 }
-istream& operator >> (istream& is, Date& d)
+istream& operator >> (istream& is, Date& D)
 {
 	cout << "Nhap ngay: ";
-	is >> d._iNgay;
+	is >> D._iNgay;
 	cout << "Nhap thang: ";
-	is >> d._iThang;
+	is >> D._iThang;
 	cout << "Nhap nam: ";
-	is >> d._iNam;
+	is >> D._iNam;
 	return is;
 }
-ostream& operator << (ostream& os, Date& d)
+ostream& operator << (ostream& os, Date& D)
 {
-	os << d._iNgay << "," << d._iThang << "," << d._iNam << endl;
+	os << D._iNgay << "," << D._iThang << "," << D._iNam << endl;
 	return os;
 }
