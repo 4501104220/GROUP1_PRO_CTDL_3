@@ -32,6 +32,7 @@ void Date::setDate(int iNgay, int iThang, int iNam)
 }
 void Date::outputNgay()
 {
+	cout << "Ngay" << "/" << "Thang" << "/" << "Nam" << endl;
 	cout << this->_iNgay << "/" << this->_iThang << "/" << this->_iNam << endl;
 }
 istream& operator >> (istream& is, Date& D)
