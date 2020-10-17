@@ -139,9 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ADMIN.h" />
+    <ClInclude Include="BANDOC.h" />
     <ClInclude Include="NGAYTHANGNAM.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Admin.cpp" />
+    <ClCompile Include="BanDoc.cpp" />
     <ClCompile Include="NgayThangNam.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,5 @@
-#ifndef BANDOC_h
-#define BANDOC_h
+#ifndef BANDOC_H_INCLUDED_
+#define BANDOC_H_INCLUDED_
 
 #include "NGAYTHANGNAM.h"
 #include <iostream>

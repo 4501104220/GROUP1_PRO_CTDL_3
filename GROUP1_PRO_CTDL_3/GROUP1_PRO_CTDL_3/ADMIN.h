@@ -1,10 +1,12 @@
 #ifndef ADMIN_H_INCLUDED_
 #define ADMIN_H_INCLUDED_
+
 #include <iostream>
 #include <string>
 #include <fstream>
 using namespace std;
 #pragma once
+
 class Admin
 {
 private:

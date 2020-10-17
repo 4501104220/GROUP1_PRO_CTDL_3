@@ -18,9 +18,21 @@
     <ClInclude Include="NGAYTHANGNAM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ADMIN.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BANDOC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="NgayThangNam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Admin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BanDoc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
