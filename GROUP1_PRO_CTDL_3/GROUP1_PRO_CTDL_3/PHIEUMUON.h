@@ -27,15 +27,15 @@ public:
 	friend BanDoc;
 	friend Sach;
 	PhieuMuon() = default;
-	PhieuMuon(string strMaBanDoc, string strMaSach, int iNgay, int iThang, int iNam)
-		:date(iNgay, iThang, iNam), bandoc(strMaBanDoc), sach(strMaSach)
+	PhieuMuon(string _strMaBanDoc, string _strMaSach, int iNgay, int iThang, int iNam)
+		:date(iNgay, iThang, iNam), bandoc(_strMaBanDoc), sach(_strMaSach)
 	{
 		_iTinhTrang = 1;
 		this->_i_static_stt++;
 	}
 	int _TraNgay(int iThang, int iNam);
-	void setNgayMuon(int& iNgayMuon, int& iThangMuon, int& iNamMuon);
-	void setNgayTra(int& iNgayMuon, int& iThangMuon, int& iNamMuon, int& iNgayTra, int& iThangTra, int& iNamTra);
+	void setNgayMuon(int& iNgay, int& iThang, int& iNam);
+	void setNgayTra(int& iNgay, int& iThang, int& iNam, int& iNgayTra, int& iThangTra, int& iNamTra);
 	bool searchMaSach(string strMaSach);
 	void nhapPhieuMuonMoi()
 	{
@@ -46,30 +46,29 @@ public:
 		cout << "Nhap ma ban doc: ";
 		getline(cin, _strMaBanDoc_);
 		
-		setNgayMuon(_iNgayMuon, iThangMuon, iNamMuon);
-		setNgayTra(iNgayMuon, iThangMuon, iNamMuon, iNgayTra, iThangTra, iNamTra);
-		cout << ngaytra << "," << thangtra << "," << namtra << endl;
+		setNgayMuon(_iNgayMuon, _iThangMuon, _iNamMuon);
+		setNgayTra(_iNgayMuon, _iThangMuon, _iNamMuon, _iNgayTra, _iThangTra, _iNamTra);
+		cout << _iNgayTra << "/" << _iThangTra << "/" << _iNamTra << endl;
 		ofstream fcout;
 		fcout.open("phieumuon.txt", ios::app);
-		fcout << _i_static_stt << "#" << masach << "#" << strMaBanDoc
-			<< "#" << ngaymuon << "#" << thangmuon
-			<< "#" << nammuon << "#" << ngaytra
-			<< "#" << thangtra << "#" << namtra << "#" << tinhtrang << endl;
+		fcout << _i_static_stt << "#" << _strMaSach_ << "#" << _strMaBanDoc_
+			<< "#" << _iNgayMuon << "#" << _iThangMuon
+			<< "#" << _iNamMuon << "#" << _iNgayTra
+			<< "#" << _iThangTra << "#" << _iNamTra << "#" << _iTinhTrang << endl;
 		fcout.close();
 	}
 	void docThongtin()
 	{
-		int STT = 0;
-
+		int _iSTT = 0;
 		ifstream fcin;
 		fcin.open("phieumuon.txt");
 
-		fcin >> STT;
+		fcin >> _iSTT;
 		fcin.ignore(1);
-		getline(fcin, masach, '#');
-		getline(fcin, strMaBanDoc, '#');
+		getline(fcin, _strMaSach_, '#');
+		getline(fcin, _strMaBanDoc_, '#');
 		fcin.ignore(1);
-		fcin >> ngaymuon;
+		fcin >> _iNgayMuon;
 		fcin.close();
 	}
 	void readPhieuMuon(ifstream& file)
@@ -77,22 +76,22 @@ public:
 		file >> _iSTT;
 		file.ignore(1);
 		rewind(stdin);
-		getline(file, masach, '#');
-		getline(file, strMaBanDoc, '#');
+		getline(file, _strMaSach_, '#');
+		getline(file, _strMaBanDoc_, '#');
 		rewind(stdin);
-		file >> ngaymuon;
+		file >> _iNgayMuon;
 		file.ignore(1);
-		file >> thangmuon;
+		file >> _iThangMuon;
 		file.ignore(1);
-		file >> nammuon;
+		file >> _iNamMuon;
 		file.ignore(1);
-		file >> ngaytra;
+		file >> _iNgayTra;
 		file.ignore(1);
-		file >> thangtra;
+		file >> _iThangTra;
 		file.ignore(1);
-		file >> namtra;
+		file >> _iNamTra;
 		file.ignore(1);
-		file >> tinhtrang;
+		file >> _iTinhTrang;
 		file.ignore(1);
 	}
 	~PhieuMuon() {};
