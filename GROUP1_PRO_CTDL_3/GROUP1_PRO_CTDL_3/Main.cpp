@@ -40,7 +40,7 @@ void menu();
 void docDSSach(vector<Sach>& S);
 void xuatDSSach(vector<Sach> S);
 void ghiDSSach(vector<Sach> S);
-int kTraSach(string sTuaDe);
+int kTraSach(string strTieuDe);
 void timSach();
 bool tinhTrangSach(string strMaSach);
 void xoaSach();
@@ -52,9 +52,9 @@ void docDSSV(vector <SinhVien>& Sv);
 void xuatDSSV(vector <SinhVien> Sv);
 void docDSGV(vector <GiaoVien>& Gv);
 void xuatDSGV(vector <GiaoVien> Gv);
-int kTraBanDocGV(vector<GiaoVien> Gv, string sMaBanDoc);
+int kTraBanDocGV(vector<GiaoVien> Gv, string strMaBanDoc);
 void timBanDocGV();
-int kTraBanDocSV(string sMaBanDoc);
+int kTraBanDocSV(string strMaBanDoc);
 void timBanDocSV();
 void timBanDoc();
 
@@ -161,11 +161,11 @@ void quanLyPhieuMuon()
 /**********************************************************
 * @Description Check book status
 **********************************************************/
-bool tinhTrangSach(string masach)
+bool tinhTrangSach(string strMaSach)
 {
 	for (int i = 0; i < S.size(); i++)
 	{
-		if (S[i].getMaSach() == masach && S[i].getTinhTrang() == 0)
+		if (S[i].getMaSach() == strMaSach && S[i].getTinhTrang() == 0)
 		{
 			return true;
 		}
@@ -178,16 +178,16 @@ bool tinhTrangSach(string masach)
 **********************************************************/
 void xoaSach()
 {
-	string masach = "";
+	string strMaSach = "";
 	do
 	{
 		cout << "Nhap ma sach: ";
 		rewind(stdin);
-		getline(cin, masach);
-	} while (tinhTrangSach(masach) == 0);
+		getline(cin, strMaSach);
+	} while (tinhTrangSach(strMaSach) == 0);
 	for (int i = 0; i < S.size(); i++)
 	{
-		if (masach == S[i].getMaSach())
+		if (strMaSach == S[i].getMaSach())
 		{
 			S.erase(S.begin() + i);
 			ghiDSSach(S);
@@ -601,14 +601,14 @@ void timBanDoc()
 **********************************************************/
 void timBanDocSV()
 {
-	string sMaBanDoc = "";
+	string strMaBanDoc = "";
 	SetColor(11);
 	cout << "\tNHAP MA BAN DOC SINH VIEN: ";
 	rewind(stdin);
-	getline(cin, sMaBanDoc);
+	getline(cin, strMaBanDoc);
 	for (int i = 0; i < Sv.size(); i++)
 	{
-		if (Sv[i].getMaBanDoc() == sMaBanDoc)
+		if (Sv[i].getMaBanDoc() == strMaBanDoc)
 		{
 			SetColor(14);
 			cout << Sv[i];
@@ -616,7 +616,7 @@ void timBanDocSV()
 			break;
 		}
 	}
-	if (kTraBanDocSV(sMaBanDoc) == -1)
+	if (kTraBanDocSV(strMaBanDoc) == -1)
 	{
 		SetColor(12);
 		cout << "MA BAN DOC NHAP SAI HOAC BAN DOC KHONG TON TAI TRONG HE THONG !!!\nNHAN ENTER DE QUAY LAI MAN HINH TIM KIEM THONG TIN\n";
@@ -629,11 +629,11 @@ void timBanDocSV()
 /**********************************************************
 * @Description Test info student after search
 **********************************************************/
-int kTraBanDocSV(string sMaBanDoc)
+int kTraBanDocSV(string strMaBanDoc)
 {
 	for (int i = 0; i < Sv.size(); i++)
 	{
-		if (Sv[i].getMaBanDoc() == sMaBanDoc)
+		if (Sv[i].getMaBanDoc() == strMaBanDoc)
 		{
 			return i;
 		}
@@ -646,14 +646,14 @@ int kTraBanDocSV(string sMaBanDoc)
 **********************************************************/
 void timBanDocGV()
 {
-	string sMaBanDoc = "";
+	string strMaBanDoc = "";
 	SetColor(11);
 	cout << "\tNHAP MA BAN DOC GIAO VIEN: ";
 	rewind(stdin);
-	getline(cin, sMaBanDoc);
+	getline(cin, strMaBanDoc);
 	for (int i = 0; i < Gv.size(); i++)
 	{
-		if (Gv[i].getMaBanDoc() == sMaBanDoc)
+		if (Gv[i].getMaBanDoc() == strMaBanDoc)
 		{
 			SetColor(14);
 			cout << Gv[i];
@@ -661,7 +661,7 @@ void timBanDocGV()
 			break;
 		}
 	}
-	if (kTraBanDocGV(Gv, sMaBanDoc) == -1)
+	if (kTraBanDocGV(Gv, strMaBanDoc) == -1)
 	{
 		SetColor(12);
 		cout << "MA BAN DOC NHAP SAI HOAC BAN DOC KHONG TON TAI TRONG HE THONG !!!\nNHAN ENTER DE QUAY LAI MAN HINH TIM KIEM THONG TIN\n";
@@ -674,11 +674,11 @@ void timBanDocGV()
 /**********************************************************
 * @Description Test info teacher after search
 **********************************************************/
-int kTraBanDocGV(vector<GiaoVien> Gv, string sMaBanDoc)
+int kTraBanDocGV(vector<GiaoVien> Gv, string strMaBanDoc)
 {
 	for (int i = 0; i < Gv.size(); i++)
 	{
-		if (Gv[i].getMaBanDoc() == sMaBanDoc)
+		if (Gv[i].getMaBanDoc() == strMaBanDoc)
 		{
 			return i;
 		}
@@ -691,14 +691,14 @@ int kTraBanDocGV(vector<GiaoVien> Gv, string sMaBanDoc)
 **********************************************************/
 void timSach()
 {
-	string sTuaDe = "";
+	string strTieuDe = "";
 	SetColor(11);
 	cout << "\tNHAP TUA DE SACH: ";
 	rewind(stdin);
-	getline(cin, sTuaDe);
+	getline(cin, strTieuDe);
 	for (int i = 0; i < S.size(); i++)
 	{
-		if (S[i].getTieuDe() == sTuaDe)
+		if (S[i].getTieuDe() == strTieuDe)
 		{
 			SetColor(14);
 			cout << S[i];
@@ -706,7 +706,7 @@ void timSach()
 			break;
 		}
 	}
-	if (kTraSach(sTuaDe) == -1)
+	if (kTraSach(strTieuDe) == -1)
 	{
 		SetColor(12);
 		cout << "TUA DE SACH NHAP SAI HOAC SACH KHONG TON TAI TRONG HE THONG !!!\nNHAN ENTER DE QUAY LAI MAN HINH TIM KIEM THONG TIN\n";
@@ -719,11 +719,11 @@ void timSach()
 /**********************************************************
 * @Description Test info book after search
 **********************************************************/
-int kTraSach(string sTuaDe)
+int kTraSach(string strTieuDe)
 {
 	for (int i = 0; i < S.size(); i++)
 	{
-		if (S[i].getTieuDe() == sTuaDe)
+		if (S[i].getTieuDe() == strTieuDe)
 		{
 			return i;
 		}
@@ -858,7 +858,7 @@ void login()
 	int dem = 0;
 	while (dem < 3)
 	{
-		string sTaiKhoan = "", sMatKhau = "";
+		string strTaiKhoan = "", strMatKhau = "";
 		SetColor(11);
 		cout << "*********************************\n";
 		SetColor(11);
@@ -872,11 +872,11 @@ void login()
 		SetColor(14);
 		cout << "Nhap tai khoan: ";
 		rewind(stdin);
-		getline(cin, sTaiKhoan);
-		//Ma hoa mat khau:
+		getline(cin, strTaiKhoan);
+
 		cout << "Nhap mat khau: ";
-		sMatKhau = maHoaMK(6);
-		if (kiemTraDN(sTaiKhoan, sMatKhau) == true)
+		strMatKhau = maHoaMK(6);
+		if (kiemTraDN(strTaiKhoan, strMatKhau) == true)
 		{
 			cout << "\nDANG NHAP THANH CONG!\n";
 			Sleep(1000);
@@ -906,7 +906,7 @@ void login()
 **********************************************************/
 string maHoaMK(unsigned int maxLength)
 {
-	string pw = "";
+	string strpassword = "";
 	for (char c; (c = _getch()); )
 	{
 		if (c == '\n' || c == '\r')
@@ -917,30 +917,30 @@ string maHoaMK(unsigned int maxLength)
 		else if (c == '\b')
 		{
 			cout << "\b \b";
-			if (!pw.empty())
-				pw.erase(pw.size() - 1);
+			if (!strpassword.empty())
+				strpassword.erase(strpassword.size() - 1);
 		}
 		else if (c == -32)
 		{
 			_getch();
 		}
-		else if (isprint(c) && pw.size() < maxLength)
+		else if (isprint(c) && strpassword.size() < maxLength)
 		{
 			cout << '*';
-			pw += c;
+			strpassword += c;
 		}
 	}
-	return pw;
+	return strpassword;
 }
 
 /**********************************************************
 * @Description Checking login
 **********************************************************/
-bool kiemTraDN(string sTaikhoan, string sMatkhau)
+bool kiemTraDN(string strTaikhoan, string strMatkhau)
 {
 	for (int i = 0; i < Ad.size(); i++)
 	{
-		if (Ad[i].getTaiKhoan() == sTaikhoan && Ad[i].getMatKhau() == sMatkhau)
+		if (Ad[i].getTaiKhoan() == strTaikhoan && Ad[i].getMatKhau() == strMatkhau)
 		{
 			return true;
 		}
