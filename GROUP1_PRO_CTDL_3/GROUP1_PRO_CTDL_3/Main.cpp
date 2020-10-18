@@ -110,7 +110,7 @@ void quanLyPhieuMuon()
 {
 	PhieuMuon p;
 	p.docThongtin();
-	int nQuanly = 0;
+	int iQuanly = 0;
 	do {
 		SetColor(11);
 		cout << "________________QUAN LY PHIEU MUON______________\n";
@@ -124,8 +124,8 @@ void quanLyPhieuMuon()
 		cout << "*********************************************\n";
 		SetColor(14);
 		cout << "Ban hay chon chuc nang can quan ly: ";
-		cin >> nQuanly;
-		switch (nQuanly)
+		cin >> iQuanly;
+		switch (iQuanly)
 		{
 		case 1:
 			system("cls");
@@ -155,7 +155,7 @@ void quanLyPhieuMuon()
 			quanLyThuVien();
 			break;
 		}
-	} while (nQuanly >= 1 && nQuanly <= 3);
+	} while (iQuanly >= 1 && iQuanly <= 3);
 }
 
 /**********************************************************
@@ -205,11 +205,11 @@ void quanLySach()
 	Sach s;
 	ofstream fcout;
 	ifstream fcin;
-	int nN = 0;
+	int iSize = 0;
 	fcin.open("Sach.txt");
-	fcin >> nN;
+	fcin >> iSize;
 	fcin.ignore(1);
-	int nQuanly = 0;
+	int iQuanly = 0;
 	do {
 		SetColor(11);
 		cout << "__________________QUAN LY SACH_______________\n";
@@ -223,8 +223,8 @@ void quanLySach()
 		cout << "*********************************************\n";
 		SetColor(14);
 		cout << "Ban hay chon chuc nang can quan ly: ";
-		cin >> nQuanly;
-		switch (nQuanly)
+		cin >> iQuanly;
+		switch (iQuanly)
 		{
 		case 1:
 			system("cls");
@@ -248,7 +248,7 @@ void quanLySach()
 			quanLyThuVien();
 			break;
 		}
-	} while (nQuanly >= 1 && nQuanly <= 3);
+	} while (iQuanly >= 1 && iQuanly <= 3);
 }
 
 
@@ -261,13 +261,11 @@ void quanLyBanDoc()
 	SinhVien sinhvien;
 	ofstream fcout;
 	ifstream fcin;
-	int nN = 0;
+	int iN = 0;
 	fcin.open("SinhVien.txt");
-	fcin >> nN;
+	fcin >> iN;
 	fcin.ignore(1);
-	string maBD, hotenBD, khoaHocBD, ngay, thang, nam, diaChi;
-	int soDT, soluong;
-	int nQuanly = 0;
+	int iQuanly = 0;
 	do {
 		SetColor(11);
 		cout << "________________QUAN LY BAN DOC______________\n";
@@ -282,8 +280,8 @@ void quanLyBanDoc()
 		cout << "*********************************************\n";
 		SetColor(14);
 		cout << "Ban hay chon chuc nang can quan ly: ";
-		cin >> nQuanly;
-		switch (nQuanly)
+		cin >> iQuanly;
+		switch (iQuanly)
 		{
 		case 1:
 			system("cls");
@@ -316,7 +314,7 @@ void quanLyBanDoc()
 			quanLyThuVien();
 			break;
 		}
-	} while (nQuanly >= 1 && nQuanly <= 4);
+	} while (iQuanly >= 1 && iQuanly <= 4);
 }
 
 /**********************************************************
@@ -324,7 +322,7 @@ void quanLyBanDoc()
 **********************************************************/
 void quanLyThuVien()
 {
-	int nQuanly = 0;
+	int iQuanly = 0;
 	do
 	{
 		system("cls");
@@ -341,8 +339,8 @@ void quanLyThuVien()
 		cout << "*********************************************\n";
 		SetColor(14);
 		cout << "Ban hay chon chuc nang can quan ly: ";
-		cin >> nQuanly;
-		switch (nQuanly)
+		cin >> iQuanly;
+		switch (iQuanly)
 		{
 		case 1:
 			system("cls");
@@ -370,7 +368,7 @@ void quanLyThuVien()
 			menuChinh();
 			break;
 		}
-	} while (nQuanly >= 1 && nQuanly <= 4);
+	} while (iQuanly >= 1 && iQuanly <= 4);
 }
 
 /**********************************************************
@@ -378,15 +376,15 @@ void quanLyThuVien()
 **********************************************************/
 void tongSachMuon()
 {
-	int nTONG = 0;
+	int iTONG = 0;
 	for (int i = 0; i < S.size(); i++)
 	{
 		if (S[i].getTinhTrang() == 1)
 		{
-			nTONG += 1;
+			iTONG++;
 		}
 	}
-	cout << "Tong so luong sach da muon la: " << nTONG << endl;
+	cout << "Tong so luong sach da muon la: " << iTONG << endl;
 	for (int i = 0; i < S.size(); i++)
 	{
 		if (S[i].getTinhTrang() == 1)
@@ -401,15 +399,15 @@ void tongSachMuon()
 **********************************************************/
 void tongSachChuaMuon()
 {
-	int nTONG = 0;
+	int iTONG = 0;
 	for (int i = 0; i < S.size(); i++)
 	{
 		if (S[i].getTinhTrang() == 0)
 		{
-			nTONG += 1;
+			iTONG += 1;
 		}
 	}
-	cout << "Tong so luong sach chua muon la: " << nTONG << endl << endl;
+	cout << "Tong so luong sach chua muon la: " << iTONG << endl << endl;
 	for (int i = 0; i < S.size(); i++)
 	{
 		if (S[i].getTinhTrang() == 0)
@@ -423,7 +421,7 @@ void tongSachChuaMuon()
 * @Description Statistic
 **********************************************************/
 void thongKe() {
-	int nQuanly = 0;
+	int iQuanly = 0;
 	do {
 		system("cls");
 		SetColor(11);
@@ -437,8 +435,8 @@ void thongKe() {
 		cout << "*********************************************\n";
 		SetColor(14);
 		cout << "Ban hay chon chuc nang can quan ly: ";
-		cin >> nQuanly;
-		switch (nQuanly)
+		cin >> iQuanly;
+		switch (iQuanly)
 		{
 		case 1:
 			system("cls");
@@ -459,7 +457,7 @@ void thongKe() {
 			quanLyThuVien();
 			break;
 		}
-	} while (nQuanly >= 1 && nQuanly <= 3);
+	} while (iQuanly >= 1 && iQuanly <= 3);
 }
 
 /**********************************************************
@@ -467,14 +465,14 @@ void thongKe() {
 **********************************************************/
 void menuChinh()
 {
-	int nChon = 0;
+	int iChon = 0;
 	do {
 		system("cls");
 		menu();
 		SetColor(10);
 		cout << "\tBan hay chon chuc nang: ";
-		cin >> nChon;
-		switch (nChon)
+		cin >> iChon;
+		switch (iChon)
 		{
 		case 1:
 			system("cls");
@@ -503,7 +501,7 @@ void menuChinh()
 			Sleep(1000);
 			exit(0);
 		}
-	} while (nChon >= 1 && nChon <= 4);
+	} while (iChon >= 1 && iChon <= 4);
 }
 
 /**********************************************************
@@ -529,7 +527,7 @@ void menu()
 **********************************************************/
 void timKiemThongtin()
 {
-	int timKiem = 0;
+	int itimKiem = 0;
 	do {
 		SetColor(11);
 		cout << "___________________TIM KIEM__________________\n";
@@ -541,8 +539,8 @@ void timKiemThongtin()
 		SetColor(11);
 		cout << "*********************************************\n";
 		cout << "Chon chuc nang can tim: ";
-		cin >> timKiem;
-		switch (timKiem)
+		cin >> itimKiem;
+		switch (itimKiem)
 		{
 		case 1:
 			timSach();
@@ -557,7 +555,7 @@ void timKiemThongtin()
 			menuChinh();
 			break;
 		}
-	} while (timKiem >= 1 && timKiem >= 3);
+	} while (itimKiem >= 1 && itimKiem >= 3);
 }
 
 /**********************************************************
@@ -565,7 +563,7 @@ void timKiemThongtin()
 **********************************************************/
 void timBanDoc()
 {
-	int timKiem = 0;
+	int itimKiem = 0;
 	SetColor(11);
 	cout << "_______________TIM KIEM BAN DOC______________\n";
 	cout << "*********************************************\n";
@@ -576,8 +574,8 @@ void timBanDoc()
 	SetColor(11);
 	cout << "*********************************************\n";
 	cout << "Chon ban doc can tim: ";
-	cin >> timKiem;
-	switch (timKiem)
+	cin >> itimKiem;
+	switch (itimKiem)
 	{
 	case 1:
 		timBanDocGV();
@@ -754,12 +752,12 @@ void xuatDSSV(vector <SinhVien> Sv)
 void docDSSV(vector <SinhVien>& Sv)
 {
 	ifstream fcin;
-	int nN = 0;
+	int iSize = 0;
 	fcin.open("SinhVien.txt");
-	fcin >> nN;
+	fcin >> iSize;
 	fcin.ignore(1);
 	SinhVien sv;
-	for (int i = 0; i < nN; i++)
+	for (int i = 0; i < iSize; i++)
 	{
 		sv.readBanDoc(fcin);
 		Sv.push_back(sv);
@@ -788,12 +786,12 @@ void xuatDSGV(vector <GiaoVien> Gv)
 void docDSGV(vector <GiaoVien>& Gv)
 {
 	ifstream fcin;
-	int nN = 0;
+	int iSize = 0;
 	fcin.open("GiaoVien.txt");
-	fcin >> nN;
+	fcin >> iSize;
 	fcin.ignore(1);
 	GiaoVien gv;
-	for (int i = 0; i < nN; i++)
+	for (int i = 0; i < iSize; i++)
 	{
 		gv.readBanDoc(fcin);
 		Gv.push_back(gv);
@@ -836,13 +834,13 @@ void xuatDSSach(vector<Sach> S)
 void docDSSach(vector<Sach>& S)
 {
 	ifstream fcin;
-	int nN = 0;
+	int iSize = 0;
 	fcin.open("Sach.txt");
 	//Khai bao cac bien:
 	Sach s;
-	fcin >> nN;
+	fcin >> iSize;
 	fcin.ignore(1);
-	for (int i = 0; i < nN; i++)
+	for (int i = 0; i < iSize; i++)
 	{
 		s.readSach(fcin);
 		S.push_back(s);
@@ -855,8 +853,8 @@ void docDSSach(vector<Sach>& S)
 **********************************************************/
 void login()
 {
-	int dem = 0;
-	while (dem < 3)
+	int idem = 0;
+	while (idem < 3)
 	{
 		string strTaiKhoan = "", strMatKhau = "";
 		SetColor(11);
@@ -886,8 +884,8 @@ void login()
 		{
 			SetColor(12);
 			cout << "\nBAN DA NHAP SAI! VUI LONG NHAP LAI!!\n";
-			dem++;
-			if (dem == 3)
+			idem++;
+			if (idem == 3)
 			{
 				cout << "\nBAN DA NHAP SAI QUA 3 LAN! XIN VUI LONG THU LAI SAU!\n" << endl;
 				Sleep(1000);
@@ -954,12 +952,12 @@ bool kiemTraDN(string strTaikhoan, string strMatkhau)
 void docTKvaMK()
 {
 	ifstream fcin;
-	int nN = 0;
+	int iSize = 0;
 	fcin.open("Admin.txt");
 	Admin Admin;
-	fcin >> nN;
+	fcin >> iSize;
 	fcin.ignore(1);
-	for (int i = 0; i < nN; i++)
+	for (int i = 0; i < iSize; i++)
 	{
 		Admin.docAd(fcin);
 		Ad.push_back(Admin);
