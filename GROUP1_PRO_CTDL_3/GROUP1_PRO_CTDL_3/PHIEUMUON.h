@@ -61,7 +61,7 @@ public:
 	{
 		int _iSTT = 0;
 		ifstream fcin;
-		fcin.open("phieumuon.txt");
+		fcin.open("PhieuMuon.txt");
 
 		fcin >> _iSTT;
 		fcin.ignore(1);
