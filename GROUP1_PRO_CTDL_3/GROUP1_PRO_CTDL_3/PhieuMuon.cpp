@@ -64,5 +64,3 @@ void PhieuMuon::setNgayTra(int& iNgay, int& iThang, int& iNam, int& iNgayTra, in
 		}
 	}
 }
-
-PhieuMuon::~PhieuMuon() {}

@@ -8,20 +8,15 @@ void SinhVien::setKhoaHoc(string strKhoaHoc)
 {
 	this->_strKhoaHoc = strKhoaHoc;
 }
+
 void SinhVien::ouputBanDoc()
 {
-	cout << "MaBanDoc" << "_" << "HoTen" << "_" <<
-		"Khoa" << "_" << "KhoaHoc" << "_" << "NgayThamGia" << "\n";
-
 	cout << this->_strMaBanDoc << "_" << this->_strHoTen << "_" <<
 		this->_strKhoa << "_" << this->_strKhoaHoc << "_" << this->NgayThamGia._iNgay << "/" << 
 		this->NgayThamGia._iThang << "/" << this->NgayThamGia._iNam << "\n";
 }
 ostream& operator<<(ostream& os, SinhVien& sv)
 {
-	os << "MaBanDoc" << "_" << "HoTen" << "_" << "Khoa" << "_" << "KhoaHoc"
-		<< "_" << "NgayThamGia" << "\n";
-
 	os << sv._strMaBanDoc << "_" << sv._strHoTen << "_" << sv._strKhoa << "_" << sv._strKhoaHoc
 		<< "_" << sv.NgayThamGia.getNgay()
 		<< "/" << sv.NgayThamGia.getThang() << "/" << sv.NgayThamGia.getNam() << "\n";

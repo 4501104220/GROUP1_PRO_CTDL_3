@@ -45,10 +45,8 @@ void Sach::readSach(ifstream& file)
 
 ostream& operator<<(ostream& os, Sach& sach)
 {
-	os << "MaSach" << "_" << "TieuDe" << "_" << "TacGia" << "_" << "NhaXuatBan" << "_" << "GiaBan" << "_" << "NamPhatHanh" << "_" << "SoTrang" << "_"
-		<< "NgayNhapKho" << "_" << "TinhTrang" << endl;
 
-	os << sach._strMaSach << "_" << sach._strTieuDe << "_" << sach._strTacGia << "_" << sach._strNhaXuatBan << "_" << sach._fGiaBan << "_" << sach._iNamPhatHanh << "_" << sach._iSoTrang << "_"
+	os << sach._strMaSach << "_____" << sach._strTieuDe << "_" << sach._strTacGia << "_" << sach._strNhaXuatBan << "_" << sach._fGiaBan << "_" << sach._iNamPhatHanh << "_" << sach._iSoTrang << "_"
 		<< sach.NgayNhapKho.getNgay() << "/" << sach.NgayNhapKho.getThang() << "/" << sach.NgayNhapKho.getNam() << "_" << sach._iTinhTrang << endl;
 	return os;
 }

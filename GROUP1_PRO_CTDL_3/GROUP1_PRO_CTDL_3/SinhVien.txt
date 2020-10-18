@@ -1,0 +1,6 @@
+5
+sv1,Tran Quoc Thang,CNTT,K45,30/4/2020
+sv2,Dang Phan Hoang Sang,CNTT,K45,26/3/2020
+sv3,Chan Hong Vy,CNTT,K45,01/5/2020
+sv4,Van Thach Truong Khanh,CNTT,K45,12/6/2020
+sv5,Ly Hoang Long,CNTT,K45,27/4/2020

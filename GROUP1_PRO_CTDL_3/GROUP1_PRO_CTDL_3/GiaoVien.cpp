@@ -24,18 +24,12 @@ void GiaoVien::setGiaoVien(string strDiaChi, string strSoDT)
 }
 void GiaoVien::ouputBanDoc()
 {
-	cout << "MaBanDoc" << "_" << "HoTen" << "_" <<
-		"Khoa" << "_" << "DiaChi" << "_" << "SoDT" << "_" << "NgayThamGia" << "\n";
-
 	cout << this->_strMaBanDoc << "_" << this->_strHoTen << "_" <<
 		this->_strKhoa << "_" << this->_strDiaChi << "_" << this->_strSoDT << "_" << this->NgayThamGia._iNgay << "/" << this->NgayThamGia._iThang << "/"
 		<< this->NgayThamGia._iNam << "\n";
 }
 ostream& operator<<(ostream& os, GiaoVien& gv)
 {
-	os << "MaBanDoc" << "_" << "HoTen" << "_" << "Khoa" << "_" << "DiaChi" << "_"
-		<< "SoDT" << "_" << "NgayThamGia" << "\n";
-
 	os << gv._strMaBanDoc << "_" << gv._strHoTen << "_" << gv._strKhoa << "_" << gv._strDiaChi << "_"
 		<< gv._strSoDT << "_" << gv.NgayThamGia.getNgay()
 		<< "/" << gv.NgayThamGia.getThang() << "/" << gv.NgayThamGia.getNam() << "\n";

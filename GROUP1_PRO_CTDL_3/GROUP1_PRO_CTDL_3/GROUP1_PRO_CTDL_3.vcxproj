@@ -151,7 +151,9 @@
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="BanDoc.cpp" />
     <ClCompile Include="GiaoVien.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="NgayThangNam.cpp" />
+    <ClCompile Include="PhieuMuon.cpp" />
     <ClCompile Include="Sach.cpp" />
     <ClCompile Include="SinhVien.cpp" />
   </ItemGroup>
