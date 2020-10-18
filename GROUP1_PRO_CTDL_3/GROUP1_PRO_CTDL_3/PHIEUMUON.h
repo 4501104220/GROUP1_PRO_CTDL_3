@@ -50,7 +50,7 @@ public:
 		setNgayTra(_iNgayMuon, _iThangMuon, _iNamMuon, _iNgayTra, _iThangTra, _iNamTra);
 		cout << _iNgayTra << "/" << _iThangTra << "/" << _iNamTra << endl;
 		ofstream fcout;
-		fcout.open("phieumuon.txt", ios::app);
+		fcout.open("PhieuMuon.txt", ios::app);
 		fcout << _i_static_STT << "#" << _strMaSach_ << "#" << _strMaBanDoc_
 			<< "#" << _iNgayMuon << "#" << _iThangMuon
 			<< "#" << _iNamMuon << "#" << _iNgayTra

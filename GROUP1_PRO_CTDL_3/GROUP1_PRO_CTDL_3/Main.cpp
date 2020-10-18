@@ -8,26 +8,35 @@
 #include <conio.h>
 #include <windows.h>
 
-//Loai bo loi canh bao khi chay chuong trinh
-
+/**********************************************************
+* @Description Remove warnings when running the program
+**********************************************************/
 #pragma warning(disable: 4996)
 #define _CRT_SECURE_NO_WARNINGS
 
-//Khai bao nguyen mau ham con:
-//Set mau:
+/**********************************************************
+* @Description Set colored text 
+* @return Text color
+**********************************************************/
 void SetColor(int ForgC);
 
-//Admin:
+/**********************************************************
+* @Description Admin
+**********************************************************/
 void docTKvaMK();
 bool kiemTraDN(string strTaikhoan, string strMatkhau);
 void login();
 string maHoaMK(unsigned int maxLength);
 
-//Menu:
+/**********************************************************
+* @Description Menu
+**********************************************************/
 void menuChinh();
 void menu();
 
-//Sach:
+/**********************************************************
+* @Description Book
+**********************************************************/
 void docDSSach(vector<Sach>& S);
 void xuatDSSach(vector<Sach> S);
 void ghiDSSach(vector<Sach> S);
@@ -36,7 +45,9 @@ void timSach();
 bool tinhTrangSach(string strMaSach);
 void xoaSach();
 
-//Ban doc:
+/**********************************************************
+* @Description Reader
+**********************************************************/
 void docDSSV(vector <SinhVien>& Sv);
 void xuatDSSV(vector <SinhVien> Sv);
 void docDSGV(vector <GiaoVien>& Gv);
@@ -47,28 +58,38 @@ int kTraBanDocSV(string sMaBanDoc);
 void timBanDocSV();
 void timBanDoc();
 
-//Chuc nang:
+/**********************************************************
+* @Description Search
+**********************************************************/
 void timKiemThongtin();
 
-//Quan ly:
+/**********************************************************
+* @Description Manage
+**********************************************************/
 void quanLyThuVien();
 void quanLyBanDoc();
 void quanLySach();
 void quanLyPhieuMuon();
 
-//Thong Ke
+/**********************************************************
+* @Description Statistics
+**********************************************************/
 void tongSachMuon();
 void tongSachChuaMuon();
 void thongKe();
 
-//Khai bao bien:
+/**********************************************************
+* @Description Declare some variables
+**********************************************************/
 vector <Admin> Ad;
 vector <Sach> S;
 vector <GiaoVien> Gv;
 vector <SinhVien> Sv;
 vector <PhieuMuon> Pm;
 
-//Chuong trinh chinh:
+/**********************************************************
+* @Description Main program
+**********************************************************/
 void main()
 {
 	docDSSach(S);
@@ -81,7 +102,10 @@ void main()
 	system("pause");
 }
 
-//Dinh nghia ham con:
+
+/**********************************************************
+* @Description Book loan
+**********************************************************/
 void quanLyPhieuMuon()
 {
 	PhieuMuon p;
@@ -105,8 +129,11 @@ void quanLyPhieuMuon()
 		{
 		case 1:
 			system("cls");
-			//Xem danh sach phieu muon
-
+//
+//Xem danh sach phieu muon
+//
+//
+//BUG
 
 			system("pause");
 			system("cls");
@@ -119,7 +146,8 @@ void quanLyPhieuMuon()
 			break;
 		case 3:
 			//Tra sach
-
+//
+//BUG
 		default:
 			cout << "BAN CHON THOAT QUAN LY PHIEU MUON!\n";
 			Sleep(1000);
@@ -129,7 +157,10 @@ void quanLyPhieuMuon()
 		}
 	} while (nQuanly >= 1 && nQuanly <= 3);
 }
-//kiem tra tinh trang sach
+
+/**********************************************************
+* @Description Check book status
+**********************************************************/
 bool tinhTrangSach(string masach)
 {
 	for (int i = 0; i < S.size(); i++)
@@ -141,7 +172,10 @@ bool tinhTrangSach(string masach)
 	}
 	return false;
 }
-//ham xoa sach
+
+/**********************************************************
+* @Description Delete book
+**********************************************************/
 void xoaSach()
 {
 	string masach = "";
@@ -162,7 +196,10 @@ void xoaSach()
 	}
 	cout << "Xoa thanh cong" << endl;
 }
-//ham quan li sach
+
+/**********************************************************
+* @Description Manage book
+**********************************************************/
 void quanLySach()
 {
 	Sach s;
@@ -213,7 +250,11 @@ void quanLySach()
 		}
 	} while (nQuanly >= 1 && nQuanly <= 3);
 }
-//ham quan li ban doc
+
+
+/**********************************************************
+* @Description Manage reader
+**********************************************************/
 void quanLyBanDoc()
 {
 	GiaoVien giaovien;
@@ -277,7 +318,10 @@ void quanLyBanDoc()
 		}
 	} while (nQuanly >= 1 && nQuanly <= 4);
 }
-//quan ly thu vien sau khi dang nhap
+
+/**********************************************************
+* @Description Manage library after login successful
+**********************************************************/
 void quanLyThuVien()
 {
 	int nQuanly = 0;
@@ -302,12 +346,12 @@ void quanLyThuVien()
 		{
 		case 1:
 			system("cls");
-			quanLyPhieuMuon();	//Xem danh sach phieu muon, tao phieu muon moi, tra sach, thoat
+			quanLyPhieuMuon();	
 			system("cls");
 			break;
 		case 2:
 			system("cls");
-			quanLySach(); //Xem danh sach sach, them sach, xoa sach, thoat
+			quanLySach();
 			system("cls");
 			break;
 		case 3:
@@ -328,7 +372,10 @@ void quanLyThuVien()
 		}
 	} while (nQuanly >= 1 && nQuanly <= 4);
 }
-//tinh tong cac sach da duoc muon
+
+/**********************************************************
+* @Description Total the borrowed book
+**********************************************************/
 void tongSachMuon()
 {
 	int nTONG = 0;
@@ -348,7 +395,10 @@ void tongSachMuon()
 		}
 	}
 }
-//tong sach chua muon
+
+/**********************************************************
+* @Description Total the available book
+**********************************************************/
 void tongSachChuaMuon()
 {
 	int nTONG = 0;
@@ -368,7 +418,10 @@ void tongSachChuaMuon()
 		}
 	}
 }
-//ham thong ke sach
+
+/**********************************************************
+* @Description Statistic
+**********************************************************/
 void thongKe() {
 	int nQuanly = 0;
 	do {
@@ -408,7 +461,10 @@ void thongKe() {
 		}
 	} while (nQuanly >= 1 && nQuanly <= 3);
 }
-//ham menu lua chon chinh
+
+/**********************************************************
+* @Description Main menu
+**********************************************************/
 void menuChinh()
 {
 	int nChon = 0;
@@ -449,7 +505,10 @@ void menuChinh()
 		}
 	} while (nChon >= 1 && nChon <= 4);
 }
-//giao dien menu
+
+/**********************************************************
+* @Description UI menu_ user interface menu
+**********************************************************/
 void menu()
 {
 	SetColor(11);
@@ -464,7 +523,10 @@ void menu()
 	SetColor(11);
 	cout << "*********************************************\n";
 }
-//tim kiem thong tin sach va ban doc
+
+/**********************************************************
+* @Description Search book and reader
+**********************************************************/
 void timKiemThongtin()
 {
 	int timKiem = 0;
@@ -497,7 +559,10 @@ void timKiemThongtin()
 		}
 	} while (timKiem >= 1 && timKiem >= 3);
 }
-//tim kiem ban doc
+
+/**********************************************************
+* @Description Search reader
+**********************************************************/
 void timBanDoc()
 {
 	int timKiem = 0;
@@ -529,7 +594,11 @@ void timBanDoc()
 		timBanDoc();
 	}
 }
-//tim kiem sinh vien
+
+
+/**********************************************************
+* @Description Search student
+**********************************************************/
 void timBanDocSV()
 {
 	string sMaBanDoc = "";
@@ -556,7 +625,10 @@ void timBanDocSV()
 	system("cls");
 	timBanDoc();
 }
-//kiem tra sinh vien truoc khi tim kiem
+
+/**********************************************************
+* @Description Test info student after search
+**********************************************************/
 int kTraBanDocSV(string sMaBanDoc)
 {
 	for (int i = 0; i < Sv.size(); i++)
@@ -568,7 +640,10 @@ int kTraBanDocSV(string sMaBanDoc)
 	}
 	return -1;
 }
-//tim kiem giao vien
+
+/**********************************************************
+* @Description Search teacher
+**********************************************************/
 void timBanDocGV()
 {
 	string sMaBanDoc = "";
@@ -595,7 +670,10 @@ void timBanDocGV()
 	system("cls");
 	timBanDoc();
 }
-//kiem tra giao vien truoc khi tim kiem
+
+/**********************************************************
+* @Description Test info teacher after search
+**********************************************************/
 int kTraBanDocGV(vector<GiaoVien> Gv, string sMaBanDoc)
 {
 	for (int i = 0; i < Gv.size(); i++)
@@ -607,7 +685,10 @@ int kTraBanDocGV(vector<GiaoVien> Gv, string sMaBanDoc)
 	}
 	return -1;
 }
-//tim kiem sach
+
+/**********************************************************
+* @Description Search book
+**********************************************************/
 void timSach()
 {
 	string sTuaDe = "";
@@ -634,7 +715,10 @@ void timSach()
 	system("cls");
 	timKiemThongtin();
 }
-//kiem tra sach truoc khi tim kiem
+
+/**********************************************************
+* @Description Test info book after search
+**********************************************************/
 int kTraSach(string sTuaDe)
 {
 	for (int i = 0; i < S.size(); i++)
@@ -646,7 +730,11 @@ int kTraSach(string sTuaDe)
 	}
 	return -1;
 }
-//xuat danh sach sinh vien
+
+
+/**********************************************************
+* @Description Output student
+**********************************************************/
 void xuatDSSV(vector <SinhVien> Sv)
 {
 	SetColor(11);
@@ -659,7 +747,10 @@ void xuatDSSV(vector <SinhVien> Sv)
 		cout << Sv[i];
 	}
 }
-//doc file sinhvien.txt
+
+/**********************************************************
+* @Description Read file SinhVien.txt
+**********************************************************/
 void docDSSV(vector <SinhVien>& Sv)
 {
 	ifstream fcin;
@@ -674,7 +765,10 @@ void docDSSV(vector <SinhVien>& Sv)
 		Sv.push_back(sv);
 	}
 }
-//xuat danh sach giao vien
+
+/**********************************************************
+* @Description Output teacher
+**********************************************************/
 void xuatDSGV(vector <GiaoVien> Gv)
 {
 	SetColor(11);
@@ -687,7 +781,10 @@ void xuatDSGV(vector <GiaoVien> Gv)
 		cout << Gv[i];
 	}
 }
-//doc file giaovien.txt
+
+/**********************************************************
+* @Description Write file GiaoVien.txt
+**********************************************************/
 void docDSGV(vector <GiaoVien>& Gv)
 {
 	ifstream fcin;
@@ -702,7 +799,10 @@ void docDSGV(vector <GiaoVien>& Gv)
 		Gv.push_back(gv);
 	}
 }
-//ghi sach
+
+/**********************************************************
+* @Description Write file Sach.txt
+**********************************************************/
 void ghiDSSach(vector<Sach> S)
 {
 	ofstream fcout;
@@ -714,7 +814,10 @@ void ghiDSSach(vector<Sach> S)
 	}
 	fcout.close();
 }
-//xuat sach
+
+/**********************************************************
+* @Description Output book
+**********************************************************/
 void xuatDSSach(vector<Sach> S)
 {
 	SetColor(11);
@@ -726,7 +829,10 @@ void xuatDSSach(vector<Sach> S)
 		cout << S[i];
 	}
 }
-//ham doc file thong tin sach
+
+/**********************************************************
+* @Description Read file Sach.txt
+**********************************************************/
 void docDSSach(vector<Sach>& S)
 {
 	ifstream fcin;
@@ -743,7 +849,10 @@ void docDSSach(vector<Sach>& S)
 	}
 	fcin.close();
 }
-//ham dang nhap
+
+/**********************************************************
+* @Description Login account
+**********************************************************/
 void login()
 {
 	int dem = 0;
@@ -791,7 +900,10 @@ void login()
 		}
 	}
 }
-//ma hoa mat khau
+
+/**********************************************************
+* @Description Password encryption
+**********************************************************/
 string maHoaMK(unsigned int maxLength)
 {
 	string pw = "";
@@ -820,7 +932,10 @@ string maHoaMK(unsigned int maxLength)
 	}
 	return pw;
 }
-//kiem tra thong tin de dang nhap
+
+/**********************************************************
+* @Description Checking login
+**********************************************************/
 bool kiemTraDN(string sTaikhoan, string sMatkhau)
 {
 	for (int i = 0; i < Ad.size(); i++)
@@ -832,13 +947,15 @@ bool kiemTraDN(string sTaikhoan, string sMatkhau)
 	}
 	return false;
 }
-//doc file admin.txt
+
+/**********************************************************
+* @Description Read file Admin.txt
+**********************************************************/
 void docTKvaMK()
 {
 	ifstream fcin;
 	int nN = 0;
 	fcin.open("Admin.txt");
-	//Khai bao cac bien:
 	Admin Admin;
 	fcin >> nN;
 	fcin.ignore(1);
@@ -849,14 +966,15 @@ void docTKvaMK()
 	}
 	fcin.close();
 }
-//ham tao color
+
+/**********************************************************
+* @Description Set color
+**********************************************************/
 void SetColor(int ForgC)
 {
 	WORD wColor;
-
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
-
 	//We use csbi for the wAttributes word.
 	if (GetConsoleScreenBufferInfo(hStdOut, &csbi))
 	{
