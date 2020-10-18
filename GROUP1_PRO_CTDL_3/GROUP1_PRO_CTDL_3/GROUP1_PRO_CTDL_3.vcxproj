@@ -141,12 +141,19 @@
   <ItemGroup>
     <ClInclude Include="ADMIN.h" />
     <ClInclude Include="BANDOC.h" />
+    <ClInclude Include="GIAOVIEN.h" />
     <ClInclude Include="NGAYTHANGNAM.h" />
+    <ClInclude Include="PHIEUMUON.h" />
+    <ClInclude Include="SACH.h" />
+    <ClInclude Include="SINHVIEN.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Admin.cpp" />
     <ClCompile Include="BanDoc.cpp" />
+    <ClCompile Include="GiaoVien.cpp" />
     <ClCompile Include="NgayThangNam.cpp" />
+    <ClCompile Include="Sach.cpp" />
+    <ClCompile Include="SinhVien.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
