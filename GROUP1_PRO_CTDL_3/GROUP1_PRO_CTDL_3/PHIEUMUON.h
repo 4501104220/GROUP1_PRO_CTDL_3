@@ -9,7 +9,7 @@
 class PhieuMuon
 {
 private:
-	static int _i_static_stt;
+	static int _i_static_STT;
 	int _iSTT = 0;
 	Date date;
 	BanDoc bandoc;
@@ -31,7 +31,7 @@ public:
 		:date(iNgay, iThang, iNam), bandoc(_strMaBanDoc), sach(_strMaSach)
 	{
 		_iTinhTrang = 1;
-		this->_i_static_stt++;
+		this->_i_static_STT++;
 	}
 	int _TraNgay(int iThang, int iNam);
 	void setNgayMuon(int& iNgay, int& iThang, int& iNam);
@@ -39,8 +39,8 @@ public:
 	bool searchMaSach(string strMaSach);
 	void nhapPhieuMuonMoi()
 	{
-		this->_i_static_stt++;
-		cout << "Nhap phieu muon thu: " << _i_static_stt << endl;
+		this->_i_static_STT++;
+		cout << "Nhap phieu muon thu: " << _i_static_STT << endl;
 		cout << "Nhap ma sach ";
 		getline(cin, _strMaSach_);
 		cout << "Nhap ma ban doc: ";
@@ -51,7 +51,7 @@ public:
 		cout << _iNgayTra << "/" << _iThangTra << "/" << _iNamTra << endl;
 		ofstream fcout;
 		fcout.open("phieumuon.txt", ios::app);
-		fcout << _i_static_stt << "#" << _strMaSach_ << "#" << _strMaBanDoc_
+		fcout << _i_static_STT << "#" << _strMaSach_ << "#" << _strMaBanDoc_
 			<< "#" << _iNgayMuon << "#" << _iThangMuon
 			<< "#" << _iNamMuon << "#" << _iNgayTra
 			<< "#" << _iThangTra << "#" << _iNamTra << "#" << _iTinhTrang << endl;
