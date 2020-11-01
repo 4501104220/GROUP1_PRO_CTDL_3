@@ -52,6 +52,8 @@ void docDSSV(vector <SinhVien>& Sv);
 void xuatDSSV(vector <SinhVien> Sv);
 void docDSGV(vector <GiaoVien>& Gv);
 void xuatDSGV(vector <GiaoVien> Gv);
+void docDSPhieuMuon(vector <PhieuMuon>& Pm);
+void xuatDSPhieuMuon(vector <PhieuMuon> Pm);
 int kTraBanDocGV(vector<GiaoVien> Gv, string strMaBanDoc);
 void timBanDocGV();
 int kTraBanDocSV(string strMaBanDoc);
@@ -96,7 +98,7 @@ void main()
 	docTKvaMK();
 	docDSGV(Gv);
 	docDSSV(Sv);
-	//docDSPhieuMuon(PM);
+	docDSPhieuMuon(Pm);
 	menuChinh();
 	//ghiDSSach(S);
 	system("pause");
@@ -106,10 +108,45 @@ void main()
 /**********************************************************
 * @Description Book loan
 **********************************************************/
+void docDSPhieuMuon(vector <PhieuMuon>& Pm) 
+{
+	{
+		ifstream fcin;
+		int iSize = 0;
+		fcin.open("PhieuMuon.txt");
+		fcin >> iSize;
+		fcin.ignore(1);
+		PhieuMuon pm;
+		for (int i = 0; i < iSize; i++)
+		{
+			pm.readPhieuMuon(fcin);
+			Pm.push_back(pm);
+		}
+	}
+}
+void xuatDSPhieuMuon(vector <PhieuMuon> Pm)
+{
+	SetColor(11);
+	cout << "--------------DANH SACH PHIEU MUON----------------\n";
+	cout << "STT" << "_" << "MaSach" << "_" << "MaBanDoc"
+		<< "_" << "NgayMuon" << "_" << "ThangMuon"
+		<< "_" << "NamMuon" << "_" << "NgayTra"
+		<< "_" << "ThangTra" << "_" << "NamTra" << "_" << "TinhTrang" << endl;
+	for (int i = 0; i < Pm.size(); i++)
+	{
+		cout << Pm[i];
+	}
+}
+
 void quanLyPhieuMuon()
 {
-	PhieuMuon p;
-	p.docThongtin();
+	PhieuMuon pm;
+	ofstream fcout;
+	ifstream fcin;
+	int iSize = 0;
+	fcin.open("PhieuMuon.txt");
+	fcin >> iSize;
+	fcin.ignore(1);
 	int iQuanly = 0;
 	do {
 		SetColor(11);
@@ -134,13 +171,14 @@ void quanLyPhieuMuon()
 //
 //
 //BUG
-
+			xuatDSPhieuMuon(Pm);
+			
 			system("pause");
 			system("cls");
 			break;
 		case 2:
 			system("cls");
-			p.nhapPhieuMuonMoi();
+			pm.nhapPhieuMuonMoi();
 			system("pause");
 			system("cls");
 			break;

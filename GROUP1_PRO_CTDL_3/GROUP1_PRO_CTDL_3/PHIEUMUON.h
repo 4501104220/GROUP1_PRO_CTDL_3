@@ -59,10 +59,8 @@ public:
 	}
 	void docThongtin()
 	{
-		int _iSTT = 0;
 		ifstream fcin;
 		fcin.open("PhieuMuon.txt");
-
 		fcin >> _iSTT;
 		fcin.ignore(1);
 		getline(fcin, _strMaSach_, '#');
@@ -71,30 +69,9 @@ public:
 		fcin >> _iNgayMuon;
 		fcin.close();
 	}
-	void readPhieuMuon(ifstream& file)
-	{
-		file >> _iSTT;
-		file.ignore(1);
-		rewind(stdin);
-		getline(file, _strMaSach_, '#');
-		getline(file, _strMaBanDoc_, '#');
-		rewind(stdin);
-		file >> _iNgayMuon;
-		file.ignore(1);
-		file >> _iThangMuon;
-		file.ignore(1);
-		file >> _iNamMuon;
-		file.ignore(1);
-		file >> _iNgayTra;
-		file.ignore(1);
-		file >> _iThangTra;
-		file.ignore(1);
-		file >> _iNamTra;
-		file.ignore(1);
-		file >> _iTinhTrang;
-		file.ignore(1);
-	}
 	~PhieuMuon() {};
+	void readPhieuMuon(ifstream& file);
+	friend ostream& operator<<(ostream& os, PhieuMuon& Pm);
 };
 
 #endif

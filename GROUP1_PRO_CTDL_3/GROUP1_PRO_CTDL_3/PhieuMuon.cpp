@@ -64,3 +64,35 @@ void PhieuMuon::setNgayTra(int& iNgay, int& iThang, int& iNam, int& iNgayTra, in
 		}
 	}
 }
+
+void PhieuMuon::readPhieuMuon(ifstream& file)
+{
+	file >> _iSTT;
+	file.ignore(1);
+	rewind(stdin);
+	getline(file, _strMaSach_, '#');
+	getline(file, _strMaBanDoc_, '#');
+	rewind(stdin);
+	file >> _iNgayMuon;
+	file.ignore(1);
+	file >> _iThangMuon;
+	file.ignore(1);
+	file >> _iNamMuon;
+	file.ignore(1);
+	file >> _iNgayTra;
+	file.ignore(1);
+	file >> _iThangTra;
+	file.ignore(1);
+	file >> _iNamTra;
+	file.ignore(1);
+	file >> _iTinhTrang;
+	file.ignore(1);
+}
+
+ostream& operator<<(ostream& os, PhieuMuon& Pm) {
+	os << Pm._iSTT << "_" << Pm._strMaSach_ << "_" << Pm._strMaBanDoc_
+		<< "_" << Pm._iNgayMuon << "/" << Pm._iThangMuon
+		<< "/" << Pm._iNamMuon << "_" << Pm._iNgayTra
+		<< "/" << Pm._iThangTra << "/" << Pm._iNamTra << "_" << Pm._iTinhTrang << endl;
+	return os;
+}
