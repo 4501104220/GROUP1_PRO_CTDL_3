@@ -1,11 +1,11 @@
 10
 A1,Dung Lua Chon An Nhan Khi Con Tre,Dang Quan dich,NXB The Gioi,41000,2019,316,10/6/2020,0
 A2,Dac Nhan Tam,Nguyen Van Phuoc dich,NXB Tong Hop,50000,2016,320,15/2/2019,0
-B1,Hai So Phan,Nguyen Viet Hai dich,NXB Van Hoc,84000,2018,768,20/6/2020,0
+B1,Hai So Phan,Nguyen Viet Hai dich,NXB Van Hoc,84000,2018,768,20/6/2020,1
 B2,Song Thuc Te Giua Doi Thuc Dung,Bui Nhung,NXB Dan Tri,49000,2018,197,15/12/2018,0
 C1,Dam Bi Ghet,Nguyen Thanh Van,NXB Lao Dong,69000,2018,266,30/1/2020,0
-C2,Tuoi Tre Dang Gia Bao Nhieu,Rosie Nguyen,NXB Hoi Nha Van,58000,2018,228,30/4/2018,1
+C2,Tuoi Tre Dang Gia Bao Nhieu,Rosie Nguyen,NXB Hoi Nha Van,58000,2018,228,30/4/2018,2
 D1,Toi Tu Hoc,Nguyen Duy Can,NXB Tre,30000,2017,262,30/9/2018,0
 D2,Doi Ngan Dung Ngu Dai,Pham Anh Tuan dich,NXB Tre,38000,2010,370,20/3/2017,0
-E1,Tu Tot Den Vi Dai,Jim Collins,NXB Tre,58000,2017,442,19/5/2018,1
-E2,Ca Phe Cung Tony,Tony Buoi Sang,NXB Tre,48000,2017,268,20/3/2019,0
+E1,Tu Tot Den Vi Dai,Jim Collins,NXB Tre,58000,2017,442,19/5/2018,0
+E2,Ca Phe Cung Tony,Tony Buoi Sang,NXB Tre,48000,2017,268,20/3/2019,3

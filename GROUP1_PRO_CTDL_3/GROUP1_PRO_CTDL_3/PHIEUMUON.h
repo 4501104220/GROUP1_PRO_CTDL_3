@@ -57,18 +57,7 @@ public:
 			<< "#" << _iThangTra << "#" << _iNamTra << "#" << _iTinhTrang << endl;
 		fcout.close();
 	}
-	void docThongtin()
-	{
-		ifstream fcin;
-		fcin.open("PhieuMuon.txt");
-		fcin >> _iSTT;
-		fcin.ignore(1);
-		getline(fcin, _strMaSach_, '#');
-		getline(fcin, _strMaBanDoc_, '#');
-		fcin.ignore(1);
-		fcin >> _iNgayMuon;
-		fcin.close();
-	}
+
 	~PhieuMuon() {};
 	void readPhieuMuon(ifstream& file);
 	friend ostream& operator<<(ostream& os, PhieuMuon& Pm);
