@@ -96,3 +96,10 @@ ostream& operator<<(ostream& os, PhieuMuon& Pm) {
 		<< "/" << Pm._iThangTra << "/" << Pm._iNamTra << "_" << Pm._iTinhTrang << endl;
 	return os;
 }
+
+void PhieuMuon::traSach() {
+	cout << "Chan thanh xin loi quy doc gia, he thong chua ho tro viec tra sach!"<<endl;
+	cout << "Nhom phat trien se som cap nhap chuc nang nay." << endl;
+	cout << "Xin cam on!";
+
+}

@@ -9,6 +9,7 @@ using namespace std;
 class Sach
 {
 private:
+	int _iSize;
 	string _strMaSach, _strTieuDe, _strTacGia, _strNhaXuatBan;
 	float _fGiaBan;
 	int _iNamPhatHanh, _iSoTrang;
@@ -17,6 +18,7 @@ private:
 public:
 	Sach()
 	{
+		this->_iSize = 0;
 		this->_strMaSach = "";
 		this->_strTieuDe = "";
 		this->_strTacGia = "";
@@ -28,6 +30,7 @@ public:
 	}
 	Sach(string strMaSach):NgayNhapKho()
 	{
+		this->_iSize = 0;
 		this->_strMaSach = strMaSach;
 		this->_strTieuDe = "";
 		this->_strTacGia = "";
@@ -37,10 +40,11 @@ public:
 		this->_iSoTrang = 0;
 		this->_iTinhTrang = 0;
 	}
-	Sach(string strMaSach, string strTieuDe, string strTacGia, string strNhaXuatBan, float fGiaBan, 
+	Sach(int iSize, string strMaSach, string strTieuDe, string strTacGia, string strNhaXuatBan, float fGiaBan, 
 		int iNamPhatHanh, int iSoTrang, int iNgay, int iThang, int iNam, int iTinhTrang)
 		:NgayNhapKho(iNgay, iThang, iNam)
 	{
+		this->_iSize = iSize;
 		this->_strMaSach = strMaSach;
 		this->_strTieuDe = strTieuDe;
 		this->_strTacGia = strTacGia;
@@ -50,9 +54,10 @@ public:
 		this->_iSoTrang = iSoTrang;
 		this->_iTinhTrang = 0;
 	}
-	Sach(string strMaSach, string strTieuDe, string strTacGia, string strNhaXuatBan, float fGiaBan, 
+	Sach(int iSize, string strMaSach, string strTieuDe, string strTacGia, string strNhaXuatBan, float fGiaBan, 
 		int iNamPhatHanh, int iSoTrang, int iTinhTrang)
 	{
+		this->_iSize = iSize;
 		this->_strMaSach = strMaSach;
 		this->_strTieuDe = strTieuDe;
 		this->_strTacGia = strTacGia;
@@ -61,6 +66,9 @@ public:
 		this->_iNamPhatHanh = iNamPhatHanh;
 		this->_iSoTrang = iSoTrang;
 		this->_iTinhTrang = 0;
+	}
+	int getSize() {
+		return this->_iSize;
 	}
 	string getMaSach()
 	{

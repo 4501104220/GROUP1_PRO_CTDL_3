@@ -35,6 +35,7 @@ void Sach::readSach(ifstream& file)
 	file.ignore(1);
 	file >> NgayNhapKho._iNgay;
 	file.ignore(1);
+	file.ignore(1);
 	file >> NgayNhapKho._iThang;
 	file.ignore(1);
 	file >> NgayNhapKho._iNam;
@@ -45,7 +46,6 @@ void Sach::readSach(ifstream& file)
 
 ostream& operator<<(ostream& os, Sach& sach)
 {
-
 	os << sach._strMaSach << "_____" << sach._strTieuDe << "_" << sach._strTacGia << "_" << sach._strNhaXuatBan << "_" << sach._fGiaBan << "_" << sach._iNamPhatHanh << "_" << sach._iSoTrang << "_"
 		<< sach.NgayNhapKho.getNgay() << "/" << sach.NgayNhapKho.getThang() << "/" << sach.NgayNhapKho.getNam() << "_" << sach._iTinhTrang << endl;
 	return os;

@@ -41,11 +41,12 @@ public:
 	{
 		this->_i_static_STT++;
 		cout << "Nhap phieu muon thu: " << _i_static_STT << endl;
-		cout << "Nhap ma sach ";
+		cout << "Nhap ma sach: ";
+		rewind(stdin);
 		getline(cin, _strMaSach_);
 		cout << "Nhap ma ban doc: ";
 		getline(cin, _strMaBanDoc_);
-		
+		rewind(stdin);
 		setNgayMuon(_iNgayMuon, _iThangMuon, _iNamMuon);
 		setNgayTra(_iNgayMuon, _iThangMuon, _iNamMuon, _iNgayTra, _iThangTra, _iNamTra);
 		cout << _iNgayTra << "/" << _iThangTra << "/" << _iNamTra << endl;
@@ -61,6 +62,7 @@ public:
 	~PhieuMuon() {};
 	void readPhieuMuon(ifstream& file);
 	friend ostream& operator<<(ostream& os, PhieuMuon& Pm);
+	void traSach();
 };
 
 #endif

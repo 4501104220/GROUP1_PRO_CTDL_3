@@ -1,4 +1,4 @@
-10
+12
 A1,Dung Lua Chon An Nhan Khi Con Tre,Dang Quan dich,NXB The Gioi,41000,2019,316,10/6/2020,0
 A2,Dac Nhan Tam,Nguyen Van Phuoc dich,NXB Tong Hop,50000,2016,320,15/2/2019,0
 B1,Hai So Phan,Nguyen Viet Hai dich,NXB Van Hoc,84000,2018,768,20/6/2020,1
@@ -9,3 +9,5 @@ D1,Toi Tu Hoc,Nguyen Duy Can,NXB Tre,30000,2017,262,30/9/2018,0
 D2,Doi Ngan Dung Ngu Dai,Pham Anh Tuan dich,NXB Tre,38000,2010,370,20/3/2017,0
 E1,Tu Tot Den Vi Dai,Jim Collins,NXB Tre,58000,2017,442,19/5/2018,0
 E2,Ca Phe Cung Tony,Tony Buoi Sang,NXB Tre,48000,2017,268,20/3/2019,3
+T1,Test,Tester,2020,1000,2020,100,15/12/2020,0
+T2,Test,Tester,T,1000,2020,100,15/12/2020,0

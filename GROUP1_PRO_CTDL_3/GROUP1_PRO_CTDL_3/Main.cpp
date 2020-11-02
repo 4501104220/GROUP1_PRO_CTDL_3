@@ -89,7 +89,7 @@ void main()
 	docDSSV(Sv);
 	docDSPhieuMuon(Pm);
 	menuChinh();
-	//ghiDSSach(S);  BUG
+	ghiDSSach(S);
 	system("pause");
 }
 /**********************************************************
@@ -514,9 +514,9 @@ string maHoaMK(unsigned int maxLength)
 			if (!strpassword.empty())
 				strpassword.erase(strpassword.size() - 1);
 		}
-		else if (c == -32)
+	else if (c == -32)
 		{
-			_getch();
+			return;
 		}
 		else if (isprint(c) && strpassword.size() < maxLength)
 		{
@@ -572,8 +572,8 @@ void quanLyThuVien()
 		cout << "*********************************************\n";
 		SetColor(14);
 		cout << "\t 1. QUAN LY PHIEU MUON \t\n";
-		cout << "\t 2. QUAN LY SACH \t\n"; //BUG THEM SACH
-		cout << "\t 3. QUAN LY BAN DOC \t\n"; //BUG THEM SINH VIEN
+		cout << "\t 2. QUAN LY SACH \t\n";
+		cout << "\t 3. QUAN LY BAN DOC \t\n";
 		cout << "\t 4. THONG KE \t\n";
 		cout << "\t 5. THOAT \t\n";
 		SetColor(11);
@@ -653,9 +653,11 @@ void quanLyPhieuMuon()
 			system("cls");
 			break;
 		case 3:
-			//Tra sach
-//
-//BUG
+			system("cls");
+			pm.traSach();
+			system("pause");
+			system("cls");
+			break;
 		default:
 			cout << "BAN CHON THOAT QUAN LY PHIEU MUON!\n";
 			Sleep(1000);
