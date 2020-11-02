@@ -28,8 +28,8 @@ int PhieuMuon::_TraNgay(int iThang, int iNam)
 
 void PhieuMuon::setNgayMuon(int& iNgay, int& iThang, int& iNam)
 {
-	time_t HienTai = time(0);
-	tm* LocalTime = localtime(&HienTai);
+	time_t now = time(0);
+	tm* LocalTime = localtime(&now);
 	iNgay = LocalTime->tm_mday;
 	iThang = 1 + LocalTime->tm_mon;
 	iNam = 1900 + LocalTime->tm_year;
@@ -38,6 +38,8 @@ void PhieuMuon::setNgayMuon(int& iNgay, int& iThang, int& iNam)
 void PhieuMuon::setNgayTra(int& iNgay, int& iThang, int& iNam, int& iNgayTra, int& iThangTra, int& iNamTra)
 {
 	iNamTra = iNam;
+	iThangTra = iThang;
+	iNgayTra = iNgay;
 	if (iThang != 12)
 	{
 		if (iNgay + 7 > _TraNgay(iThang, iNam))

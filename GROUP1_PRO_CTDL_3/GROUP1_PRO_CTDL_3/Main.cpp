@@ -516,7 +516,7 @@ string maHoaMK(unsigned int maxLength)
 		}
 	else if (c == -32)
 		{
-			return;
+			_getch();
 		}
 		else if (isprint(c) && strpassword.size() < maxLength)
 		{
