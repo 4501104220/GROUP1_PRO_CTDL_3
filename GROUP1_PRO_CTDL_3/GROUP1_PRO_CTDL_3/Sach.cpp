@@ -35,7 +35,6 @@ void Sach::readSach(ifstream& file)
 	file.ignore(1);
 	file >> NgayNhapKho._iNgay;
 	file.ignore(1);
-	file.ignore(1);
 	file >> NgayNhapKho._iThang;
 	file.ignore(1);
 	file >> NgayNhapKho._iNam;

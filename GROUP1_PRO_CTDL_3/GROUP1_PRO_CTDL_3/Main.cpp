@@ -185,22 +185,7 @@ void xuatDSSach(vector<Sach> S)
 	}
 }
 /**********************************************************
-* @Description Output teacher
-**********************************************************/
-void xuatDSGV(vector <GiaoVien> Gv)
-{
-	SetColor(11);
-	SinhVien sv;
-	cout << "----------DANH SACH BAN DOC LA GIAO VIEN----------\n";
-	cout << "MaBanDoc" << "_" << "HoTen" << "_" << "Khoa" << "_" << "DiaChi" << "_"
-		<< "SoDT" << "_" << "NgayThamGia" << "\n";
-	for (int i = 0; i < Gv.size(); i++)
-	{
-		cout << Gv[i];
-	}
-}
-/**********************************************************
-* @Description Write file GiaoVien.txt
+* @Description Read file GiaoVien.txt
 **********************************************************/
 void docDSGV(vector <GiaoVien>& Gv)
 {
@@ -214,6 +199,21 @@ void docDSGV(vector <GiaoVien>& Gv)
 	{
 		gv.readBanDoc(fcin);
 		Gv.push_back(gv);
+	}
+}
+/**********************************************************
+* @Description Output teacher
+**********************************************************/
+void xuatDSGV(vector <GiaoVien> Gv)
+{
+	SetColor(11);
+	SinhVien sv;
+	cout << "----------DANH SACH BAN DOC LA GIAO VIEN----------\n";
+	cout << "MaBanDoc" << "_" << "HoTen" << "_" << "Khoa" << "_" << "DiaChi" << "_"
+		<< "SoDT" << "_" << "NgayThamGia" << "\n";
+	for (int i = 0; i < Gv.size(); i++)
+	{
+		cout << Gv[i];
 	}
 }
 /**********************************************************
